@@ -1,7 +1,7 @@
 package com.algaworks.algasensors.temperature.processing.api.controller;
 
 import com.algaworks.algasensors.temperature.processing.IdGenerator;
-import com.algaworks.algasensors.temperature.processing.api.model.TemperaturaLogOutput;
+import com.algaworks.algasensors.temperature.processing.api.model.TemperatureLogOutput;
 import io.hypersistence.tsid.TSID;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -30,9 +30,9 @@ public class TempetureProcessingController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
 
-        TemperaturaLogOutput logOutput = TemperaturaLogOutput.builder()
+        TemperatureLogOutput logOutput = TemperatureLogOutput.builder()
                 .id(IdGenerator.generateTimeBasedUUID())
-                .sensor(sensorId)
+                .sensorId(sensorId)
                 .value(temperature)
                 .registedAt(OffsetDateTime.now())
                 .build();

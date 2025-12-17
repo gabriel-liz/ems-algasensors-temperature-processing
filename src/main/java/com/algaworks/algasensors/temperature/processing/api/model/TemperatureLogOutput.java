@@ -10,10 +10,10 @@ import java.util.UUID;
 
 @Data
 @Builder
-public class TemperaturaLogOutput {
+public class TemperatureLogOutput {
 
     private UUID id;
-    private TSID sensor;
+    private TSID sensorId;
     private OffsetDateTime registedAt;
     private Double value;
 }
