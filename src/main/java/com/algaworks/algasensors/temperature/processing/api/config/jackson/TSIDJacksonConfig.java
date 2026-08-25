@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class TSIDJacksonConfig {
 
+    //Essa configuracao é para que quando for enviado as temperaturas, o id do device não seja enviado com um objeto e sim como uma string, apenas com o TSID
     @Bean
     public Module tsidModule(){
         SimpleModule module = new SimpleModule();
