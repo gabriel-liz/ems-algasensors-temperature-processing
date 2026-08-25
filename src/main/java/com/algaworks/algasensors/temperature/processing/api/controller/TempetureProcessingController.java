@@ -44,6 +44,7 @@ public class TempetureProcessingController {
                 .registedAt(OffsetDateTime.now())
                 .build();
 
+        //Para que o logOutput consiga ser enviado para o RabbitMQ, adicionamos um serializador no RabbitMQ para transformar o objeto em um Json, pois o rabbitMQ não consegue enviar apenas o objeto
         log.info(logOutput.toString());
 
         String exchange = FANOUT_EXCHANGE_NAME;

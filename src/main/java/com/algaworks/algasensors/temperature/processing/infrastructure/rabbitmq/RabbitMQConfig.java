@@ -12,8 +12,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
 
-    public static final String FANOUT_EXCHANGE_NAME = "temperature-processing.tempertura-received.v1.e";
+    public static final String FANOUT_EXCHANGE_NAME = "temperature-processing.temperature-received.v1.e";
 
+    //Usado para transformar o objeto que sera enviado para o RabbitMQ em um Json
     @Bean
     public Jackson2JsonMessageConverter jackson2JsonMessageConverter(ObjectMapper objectMapper){
         return new Jackson2JsonMessageConverter(objectMapper);
